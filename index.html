@@ -3,63 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo CSS Flex</title>
+    <title>Grid</title>
     <style>
         * {
-            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            display: border-box;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f0f0;
         }
 
-        main {
-            padding: 30px 20px;
-            margin: 10px auto;
+        .main {
+            max-width: 950px;
+            height: auto;
+            margin: 30px auto;
+            padding: 10px;
+            background-color: #ffff;
             display: flex;
-            flex-direction: row-reverse;
-            align-items: center;
+            flex-direction: column;
             flex-grow: 1;
-            justify-content: space-between;
-            max-width: 1200px;
-            flex-wrap: wrap;
+            align-items: center;
         }
 
-        .main-content {
-            max-width: 800px;
+        .main .title {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        .main-content h1 {
-            font-size: 20px;
+        .griditems {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas:
+                "grid1 grid2 grid3";
+            gap: 15px;
         }
 
-        .main-content a {
-            text-decoration: none;
-            color: red;
-        }
-
-        .main-content p {
-            font-size: 16px;
-            color: gray;
-        }
-
-        .main-box {
-            background-color: red;
-            width: 300px;
-            height: 300px;
-            border-radius: 10px;
-            box-shadow: 0 0 2px black;
+        .grid1, .grid2, .grid3 {
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <main>
-        <div class="main-content">
-            <h1>Exemplo Título</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in tempora a sunt ipsum minus ducimus, nostrum, sit accusamus quibusdam, unde consectetur! Et exercitationem voluptates rerum. Omnis natus magnam exercitationem.</p>
+    <main class="main">
+        <div class="title">
+            <h1>Grid Layout</h1>
+            <p>Exemplo de Layout com Grid:</p>
         </div>
-        <div class="main-box">
-            <!--Caixa para Preenchimento-->
+        <div class="griditems">
+            <div class="grid1">
+                <h1>Grid1</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem nobis quibusdam et rerum sit odit debitis labore, possimus ab non dolorum nostrum laboriosam aliquam, minima voluptate. Sint nemo natus tenetur?</p>
+            </div>
+            <div class="grid2">
+                <h1>Grid2</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem aliquid nam laborum nisi culpa similique aperiam mollitia incidunt accusamus sapiente minima, dicta iusto exercitationem magnam tempora cupiditate molestiae. Culpa, architecto.</p>
+            </div>
+            <div class="grid3">
+                <h1>Grid3</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis fugit corporis aperiam dolore adipisci inventore velit iusto dignissimos dolores? Unde quasi repellendus sequi mollitia repellat quisquam odio blanditiis eos quam.</p>
+            </div>
         </div>
     </main>
 </body>
